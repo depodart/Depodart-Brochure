@@ -12,4 +12,25 @@ import AGAUCU from "./projects/AGAUCU.png";
 import Results from "./projects/Results.png";
 import ORE3D from "./projects/ORE3D.png";
 
-export { AGAUCU, ORE3D, Results, logo, Dart_1, github, menu, close };
+// Import Brochure images
+
+import Brochure1 from "./brochure/first-page.jpg";
+import Brochure2 from "./brochure/second-page.jpg";
+// import Brochure3 from "./brochure/Brochure3.png";
+// import Brochure4 from "./brochure/Brochure4.png";
+
+
+export { 
+    AGAUCU, 
+    ORE3D, 
+    Results, 
+    logo, 
+    Dart_1, 
+    github, 
+    menu, 
+    close, 
+    Brochure1, 
+    Brochure2, 
+    // Brochure3, 
+    // Brochure4 
+};
