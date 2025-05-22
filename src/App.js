@@ -1,16 +1,14 @@
 // src/App.js
 import React from 'react';
-import Map from './components/Map';
 import FirstPage from './pages/First';
 import SecondPage from './pages/Second';
-
+import ThirdPage from './pages/Third';
 function App() {
   return (
     <div className="App">
-      {/* <h1>Dotted Map Example</h1>
-      <Map /> */}
       <FirstPage />
       <SecondPage />
+      <ThirdPage />
     </div>
   );
 }
