@@ -41,10 +41,10 @@ function App() {
       </div>
 
       {/* Main Content */}
-      <FirstPage />
+      {/* <FirstPage />
       <SecondPage />
       <ThirdPage />
-      <LastPage />
+      <LastPage /> */}
       
       {/* New Interactive Map Demo */}
       {/* <MapDemo /> */}
