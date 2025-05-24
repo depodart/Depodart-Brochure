@@ -23,6 +23,10 @@ import USGS_LOGO from "./brochure/map/USGS-Logo.png";
 import ONTARIO_LOGO from "./brochure/map/Ontario-Logo.png";
 import QUEBEC_LOGO  from "./brochure/map/Quebecq-Logo.png";
 import QUEBEC_ICON  from "./brochure/map/Quebecq-Icon.png";
+import AUSTRALIA_GOVERNMENT_LOGO  from "./brochure/map/Australia_Government-Logo.png";
+import AUSTRALIA_MINERALS_LOGO  from "./brochure/map/Australia_Minerals-Logo.png";
+import AUSTRALIA_WESTERN_LOGO  from "./brochure/map/Australia_Western-Logo.jpg";
+
 
 
 
@@ -48,6 +52,9 @@ export {
     ONTARIO_LOGO,
     QUEBEC_LOGO,
     QUEBEC_ICON,
+    AUSTRALIA_GOVERNMENT_LOGO,
+    AUSTRALIA_MINERALS_LOGO,
+    AUSTRALIA_WESTERN_LOGO,
     // Brochure3, 
     // Brochure4 
 };
