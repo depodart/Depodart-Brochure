@@ -1,8 +1,9 @@
 import { Page, View, Text, Image, StyleSheet } from '@react-pdf/renderer';
 import { 
-  BC_LOGO, 
-  USGS_LOGO, 
-  ONTARIO_LOGO, 
+  
+  PERSPECTIVE_MAP, 
+  ORE3D_MAP, 
+  FOLDER_RESULTS, 
  logo } from '../../assets';
 
 const styles = StyleSheet.create({
@@ -74,9 +75,8 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: 'bold',
-    textAlign: 'center',
+    textAlign: 'left',
     marginBottom: 20,
-    backgroundColor: 'rgba(32, 13, 2, 0.8)',
     borderRadius: 8
   },
   logoContainer: {
@@ -119,38 +119,41 @@ const RegionRow = ({ imageSrc, title, description }) => (
 
 const regions = [
   {
-    imageSrc: BC_LOGO,
-    title: 'Canada Coverage',
-    description: 'Our comprehensive data collection across Canada covers vast territories including urban centers, rural areas, and remote regions. This extensive coverage provides valuable insights into diverse geographical and demographic patterns across the country.'
+    imageSrc: PERSPECTIVE_MAP,
+    title: 'AI for 2D mineral deposits targeting',
+    description: 'Our models identify hidden patterns in your geodata, highlighting high-potential zones quickly—saving time, money, and improving early-stage exploration accuracy.'
   },
   {
-    imageSrc: ONTARIO_LOGO, 
-    title: 'Australia Expansion',
-    description: 'Australia represents a significant portion of our data collection efforts, spanning from major metropolitan areas to the vast outback regions. This coverage enables comprehensive analysis of unique Australian landscapes and population distributions.'
+    imageSrc: FOLDER_RESULTS,
+    title: 'Visual Tools for Data Interpretation', 
+    description: 'Our interactive visual tools turn complex geoscientific data into clear, intuitive visuals—making it easier to analyze, interpret, and communicate insights. '
   },
   {
-    imageSrc: USGS_LOGO,
-    title: 'United States Integration', 
-    description: 'The United States data collection encompasses diverse regions from coast to coast, providing rich datasets that capture the complexity and diversity of American geography, demographics, and infrastructure patterns.'
-  }
+    imageSrc: ORE3D_MAP, 
+    title: 'AI for 3D Mine Modeling',
+    description: 'Build 3D representations of mineral deposits  to support mine planning and development —leading to smarter extraction strategies, reduced operational risks, and more efficient resource management.'
+  },
 ];
 
 export const FourthPageContent = () => (
   <Page size="A4" style={styles.page}>
-    <View style={styles.topbar}>
-      <Text style={styles.topbarTitle}>
-        MINERALS MAPS SOLUTIONS
-      </Text>
-      <View style={styles.logoContainer}>
-        <Image src={logo} style={styles.logo} />
-        <Text style={styles.companyName}>DepoDart</Text>
-      </View>
+  <View style={styles.topbar}>
+    <Text style={styles.topbarTitle}>
+      MINERALS MAPS SOLUTIONS
+    </Text>
+    <View style={styles.logoContainer}>
+      <Image src={logo} style={styles.logo} />
+      <Text style={styles.companyName}>DepoDart</Text>
     </View>
+  </View>
 
-    <View style={styles.container}>
-      {regions.map((region, index) => (
-        <RegionRow key={index} {...region} />
-      ))}
-    </View>
-  </Page>
+  <View style={styles.container}>
+    <Text style={styles.mainTitle}>
+    Our AI-driven solutions address key challenges in the mining industry, including the creation of 2D prospectivity maps and 3D deposit modeling. These tools are designed to support mineral exploration and mining operations, respectively. By leveraging machine learning models, we provide valuable insights that help reduce costs by accurately identifying prospective areas, enabling more efficient allocation of resources.
+    </Text>
+    {regions.map((region, index) => (
+      <RegionRow key={index} {...region} />
+    ))}
+  </View>
+</Page>
 );

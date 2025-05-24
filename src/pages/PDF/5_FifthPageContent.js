@@ -3,7 +3,8 @@ import {
   BC_LOGO, 
   USGS_LOGO, 
   ONTARIO_LOGO, 
- logo } from '../../assets';
+  logo 
+} from '../../assets';
 
 const styles = StyleSheet.create({
   page: {
