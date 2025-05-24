@@ -93,8 +93,6 @@ const styles = {
   featureContent: {
     flexDirection: 'row',
     padding: 16,
-    borderRadius: 8,
-    border: '1px solid #4A1F03',
     alignItems: 'center',
     gap: 16
   },
@@ -292,8 +290,6 @@ const styles = {
   },
   footerContainer: {
     padding: 16,
-    backgroundColor: '#3B1702',
-    borderTop: '2px solid #4A1F03',
   },
   footer: {
     flexDirection: 'row',

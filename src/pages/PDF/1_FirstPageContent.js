@@ -1,78 +1,84 @@
-import { logo, Brochure1, Brochure2 } from '../../assets';
-import { Page, View, Text, Image } from '@react-pdf/renderer';
+import { logo, Brochure1 } from '../../assets';
+import { Page, View, Text, Image, StyleSheet } from '@react-pdf/renderer';
+
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: 'column',
+    backgroundColor: '#fff',
+    padding: 0,
+    height: '100%',
+  },
+  header: {
+    backgroundColor: '#200D02',
+    color: 'white', 
+    padding: 40,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    height: '25%',
+  },
+  headerContent: {
+    textAlign: 'right',
+    paddingRight: 32,
+  },
+  logoContainer: {
+    flexDirection: 'row',
+    alignItems: 'center', 
+    justifyContent: 'flex-end',
+    gap: 16,
+  },
+  logo: {
+    width: 80,
+    height: 80,
+  },
+  companyName: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  slogan: {
+    fontSize: 20,
+    marginTop: 12,
+    color: 'white',
+  },
+  mainImage: {
+    width: '100%',
+    height: '55%',
+    objectFit: 'cover',
+  },
+  footer: {
+    backgroundColor: '#D23B0C',
+    color: 'white',
+    padding: 50,
+    borderBottom: 2,
+    height: '20%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderTop: '2px solid #FF4D1A',
+  },
+  website: {
+    fontSize: 24,
+    fontWeight: 'medium'
+  }
+});
 
 export const FirstPageContent = () => (
-    <Page size="A4" style={{
-      flexDirection: 'column',
-      backgroundColor: '#fff',
-      padding: 0,
-      height: '100%',
-    }}>
-      {/* Header with company name and slogan */}
-      <View style={{
-        // backgroundColor: '#782F0D', // secondary-dark
-        backgroundColor: '#200D02', // secondary-dark
-        color: 'white',
-        padding: 40,
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        height: '25%',
-      }}>
-        <View style={{
-          textAlign: 'right',
-          paddingRight: 32,
-        }}>
-          <View style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'flex-end',
-            gap: 16,
-          }}>
-            <Image src={logo} style={{
-              width: 80,
-              height: 80,
-            }} />
-            <Text style={{
-              fontSize: 48,
-              fontWeight: 'bold',
-              color: 'white',
-            }}>DepoDart</Text>
-          </View>
-          <Text style={{
-            fontSize: 20,
-            marginTop: 12,
-            color: 'white',
-          }}>Where big data meets big discoveries</Text>
+  <Page size="A4" style={styles.page}>
+    <View style={styles.header}>
+      <View style={styles.headerContent}>
+        <View style={styles.logoContainer}>
+          <Image src={logo} style={styles.logo} />
+          <Text style={styles.companyName}>DepoDart</Text>
         </View>
+        <Text style={styles.slogan}>Where big data meets big discoveries</Text>
       </View>
-  
-      {/* Main content with big image */}
-      <Image src={Brochure1} style={{
-        width: '100%',
-        height: '55%',
-        objectFit: 'cover',
-      }} />
-  
-      {/* Footer */}
-      <View style={{
-        backgroundColor: '#782F0D',
-        color: 'white',
-        padding: 50,
-        borderBottom: 2,
-        borderBottomColor: 'white',
-        height: '20%',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}>
-        <Image src={logo} style={{
-          width: 80,
-          height: 80
-        }} />
-        <Text style={{
-          fontSize: 24,
-          fontWeight: 'medium'
-        }}>www.depodart.com</Text>
-      </View>
-    </Page>
-  );
+    </View>
+
+    <Image src={Brochure1} style={styles.mainImage} />
+
+    <View style={styles.footer}>
+      <Image src={logo} style={styles.logo} />
+      <Text style={styles.website}>www.depodart.com</Text>
+    </View>
+  </Page>
+);

@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
   page: {
     flexDirection: 'column',
     backgroundColor: '#200D02',
-    padding: 0,
+    paddingHorizontal: 40,
+    paddingVertical: 20,
     margin: 0,
     width: '100vw',
     height: '100vh',
@@ -27,7 +28,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between'
   },
-  topSection: {
+  titleSection: {
+    marginBottom: 30,
+    zIndex: 1
+  },
+  topCardsSection: {
     marginBottom: 20
   },
   middleSection: {
@@ -43,19 +48,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'stretch',
     width: '100%',
-    gap: 16
+    gap: 12 // Reduced gap
   },
   column: {
     flex: 1,
-    minWidth: 0,
+    height: 100, 
+    width: 100, 
     backgroundColor: '#FFFFFF',
-    padding: 16,
-    // Enhanced card styling
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    minHeight: 120,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    border: '1px solid #D23B0C',
+    borderRadius: 8
   },
   cityCard: {
     width: '100%',
@@ -64,26 +68,22 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 12
+    gap: 8 // Reduced from 12 to 8
   },
   cityImage: {
     width: '100%',
-    maxWidth: 80,
-    height: 60,
+    maxWidth: 50, // Reduced from 80 to 50
+    height: 40, // Reduced from 60 to 40
     objectFit: 'contain',
-    borderRadius: 6,
-    // Enhanced image styling
-    border: '1px solid #F3F4F6',
-    padding: 4
+    borderRadius: 4 // Reduced from 6 to 4
   },
   cityName: {
-    fontSize: 13,
+    fontSize: 10, // Reduced from 13 to 10
     fontWeight: 'bold',
     color: '#D23B0C',
     textAlign: 'center',
-    lineHeight: 1.4,
-    // Enhanced text styling
-    letterSpacing: 0.5,
+    lineHeight: 1.3, // Reduced from 1.4 to 1.3
+    letterSpacing: 0.3, // Reduced from 0.5 to 0.3
     textTransform: 'uppercase'
   },
   mapContainer: {
@@ -92,7 +92,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // No background for map as requested
     backgroundColor: 'transparent'
   },
   mapImage: {
@@ -103,24 +102,32 @@ const styles = StyleSheet.create({
   },
   images: {
     width: '100%',
-    maxWidth: 80,
-    height: 60,
+    maxWidth: 100, // Reduced from 80 to 50
+    height: 100, // Reduced from 80 to 50
     objectFit: 'contain',
-    borderRadius: 6,
-    // Enhanced styling for logo images
-    padding: 4,
+    borderRadius: 4, // Reduced from 6 to 4
   },
-  // Special styling for transparent columns
   transparentColumn: {
     backgroundColor: 'transparent',
     border: 'none',
     boxShadow: 'none',
     padding: 0
+  },
+  title: {
+    // color: '#D23B0C',
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 0,
+    lineHeight: 1.5,
+    paddingHorizontal: 10
   }
 });
 
-// Enhanced CityCard component with better visual hierarchy
 const CityCard = ({ cityName, logoSrc }) => (
+  <>
+    <Text style={styles.cityName}>{cityName}</Text>
   <View style={styles.cityCard}>
     {logoSrc && (
       <View style={{
@@ -132,8 +139,8 @@ const CityCard = ({ cityName, logoSrc }) => (
         <Image src={logoSrc} style={styles.images} />
       </View>
     )}
-    <Text style={styles.cityName}>{cityName}</Text>
   </View>
+    </>
 );
 
 const MapSection = () => (
@@ -159,12 +166,9 @@ const CanadianProvinces = () => (
 const BottomRow = () => (
   <View style={styles.row}>
     <View style={styles.column}>
-      <CityCard cityName="USGS" logoSrc={USGS_LOGO} />
+      <CityCard cityName="United States" logoSrc={USGS_LOGO} />
     </View>
-    {/* Empty column for balance */}
-    <View style={[styles.column, {backgroundColor: 'transparent'}]} />
-    {/* ------------------------ */}
-
+    <View style={[styles.column, {backgroundColor: 'transparent', border: '1px solid transparent'}]} />
     <View style={styles.column}>
       <CityCard cityName="Australia" logoSrc={AUSTRALIA_GOVERNMENT_LOGO} />
     </View>
@@ -174,17 +178,23 @@ const BottomRow = () => (
 export const ThirdPageContent = () => (
   <Page size="A4" style={styles.page}>
     <View style={styles.container}>
-      <View style={styles.topSection}>
-        <CanadianProvinces />
+      <View style={styles.titleSection}>
+        <Text style={styles.title}>
+        We are continuously expanding our data collection. As of now, it spans an impressive 26 million square kilometers across Canada, Australia, and the United States—an area nearly twice the size of Russia and representing 17% of the world’s total landmass.
+        </Text>
       </View>
-      
+
       <View style={styles.middleSection}>
         <MapSection />
       </View>
-      
+
+      <View style={styles.topCardsSection}>
+        <CanadianProvinces />
+      </View>
+    
       <View style={styles.bottomSection}>
         <BottomRow />
       </View>
     </View>
   </Page>
-);
+)
