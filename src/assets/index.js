@@ -1,6 +1,7 @@
 // Import company logos
 import logo from "./company/Logo.png";
 import Dart_1 from "./company/DART_1.png";
+import depodartQRCode from "./company/DepoDart-QR.png";
 import github from "./github.png";
 
 // Import icons
@@ -16,6 +17,15 @@ import ORE3D from "./projects/ORE3D.png";
 
 import Brochure1 from "./brochure/first-page.jpg";
 import Brochure2 from "./brochure/second-page.jpg";
+import GLOBAL_MAP from "./brochure/map/covered_global_map.png";
+import BC_LOGO from "./brochure/map/British_Columbia-Logo.png";
+import USGS_LOGO from "./brochure/map/USGS-Logo.png";
+import ONTARIO_LOGO from "./brochure/map/Ontario-Logo.png";
+import QUEBEC_LOGO  from "./brochure/map/Quebecq-Logo.png";
+import QUEBEC_ICON  from "./brochure/map/Quebecq-Icon.png";
+
+
+
 // import Brochure3 from "./brochure/Brochure3.png";
 // import Brochure4 from "./brochure/Brochure4.png";
 
@@ -31,6 +41,13 @@ export {
     close, 
     Brochure1, 
     Brochure2, 
+    depodartQRCode,
+    GLOBAL_MAP,
+    BC_LOGO,
+    USGS_LOGO,
+    ONTARIO_LOGO,
+    QUEBEC_LOGO,
+    QUEBEC_ICON,
     // Brochure3, 
     // Brochure4 
 };

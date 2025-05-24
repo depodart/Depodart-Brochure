@@ -27,19 +27,19 @@ const CompanyHeader = () => (
 
 // Component for QR code section
 const QRCodeSection = () => (
-  <div className="p-2">
+  <div className="p-4">
     <QRCode 
       value={WEBSITE_URL}
-      size={64}
+      size={96}
       level="H"
       includeMargin={true}
-      className="mx-auto bg-white"
+      className="mx-auto bg-white p-2 rounded-lg"
     />
     <a 
       href={WEBSITE_URL}
       target="_blank" 
       rel="noopener noreferrer"
-      className="text-white text-xs mt-1 block text-center"
+      className="text-white text-sm mt-2 block text-center hover:text-tertiary-light transition-colors"
     >
       {WEBSITE_URL.replace('https://', '')}
     </a>
