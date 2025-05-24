@@ -49,10 +49,8 @@ const styles = StyleSheet.create({
     flex: 1,
     minWidth: 0,
     backgroundColor: '#FFFFFF',
-    borderRadius: 12,
     padding: 16,
     // Enhanced card styling
-    border: '1px solid #E5E7EB',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
     minHeight: 120,
     display: 'flex',
@@ -110,9 +108,7 @@ const styles = StyleSheet.create({
     objectFit: 'contain',
     borderRadius: 6,
     // Enhanced styling for logo images
-    border: '1px solid #F3F4F6',
     padding: 4,
-    backgroundColor: '#FAFAFA'
   },
   // Special styling for transparent columns
   transparentColumn: {
@@ -128,9 +124,6 @@ const CityCard = ({ cityName, logoSrc }) => (
   <View style={styles.cityCard}>
     {logoSrc && (
       <View style={{
-        backgroundColor: '#FAFAFA',
-        borderRadius: 8,
-        padding: 8,
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
@@ -156,9 +149,9 @@ const CanadianProvinces = () => (
     </View>
     <View style={[styles.column, {backgroundColor: 'transparent'}]}>
       <CityCard cityName="Ontario" logoSrc={ONTARIO_LOGO} />
+    </View>
     <View style={styles.column}>
       <CityCard cityName="Quebec" logoSrc={QUEBEC_LOGO} />
-    </View>
     </View>
   </View>
 );
